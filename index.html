@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Button Example</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-    </style>
     <script>
-        function buttonClicked() {
-            alert('Button was clicked!');
+        function sendButtonStatus(status) {
+            fetch('http://your-pico-ip-address', { // Replace 'your-pico-ip-address' with the actual IP address of your Pico
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ buttonStatus: status })
+            })
+            .then(response => response.text())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
         }
     </script>
 </head>
 <body>
     <h1>Button Example</h1>
-    <button onclick="buttonClicked()">Click Me</button>
+    <button onclick="sendButtonStatus('pressed')">Click Me</button>
 </body>
 </html>
