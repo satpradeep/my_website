@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button</title>
+    <title>Button Example</title>
     <script>
         function sendButtonStatus(status) {
-            fetch('http://192.168.43.53', { // Replace with your Pico's IP address
+            fetch('https://0d51-49-15-207-108.ngrok-free.app', { // Replace with the HTTPS URL provided by ngrok
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -21,6 +21,6 @@
 </head>
 <body>
     <h1>Button Example</h1>
-    <button onclick="sendButtonStatus('pressed')">Click</button>
+    <button onclick="sendButtonStatus('pressed')">Click Me</button>
 </body>
 </html>
