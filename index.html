@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Example</title>
+    <title>Button Status</title>
     <script>
         function sendButtonStatus(status) {
-            fetch('http://192.168.43.53', { // Replace 'your-pico-ip-address' with the actual IP address of your Pico
+            fetch('http://192.168.43.53', { // Replace with your Pico's IP address
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
